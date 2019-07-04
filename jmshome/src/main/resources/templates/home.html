@@ -1,0 +1,675 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>JJLin's Family</title>
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/weadmin.css">
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/jmshome.css">
+    <link rel="stylesheet" href="../css/toastr.css">
+</head>
+
+<body ng-app='myapp' ng-controller="homeIndex">
+<div class="main">
+    <div class="header">
+        <div class="header_left">
+            <ul>
+                <li class="header_left_logo"><img src="../img/logo.png"></li>
+                <li class="header_left_avatar"><img src="../img/avatar.jpg"></li>
+            </ul>
+        </div>
+        <div class="header_center">
+            <ul style="text-align:left;" class="switch">
+                <li class="select">首页</li>
+                <li>手机壁纸</li>
+                <li>电脑壁纸</li>
+                <li>视频</li>
+                <li>我与老林的小故事</li>
+            </ul>
+        </div>
+        <div class="header_right" ng-show="Islogin==false">
+            <ul>
+                <li>
+                    <button type="button" class="am-btn am-btn-primary login-btn"
+                            data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0}">
+                        登录/注册
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="am-btn am-btn-primary login-btn"
+                            data-am-modal="{target: '#doc-modal-3', closeViaDimmer: 0, width: 300, height: 100}">
+                        签到
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="header_right" ng-show="Islogin">
+            <div class="am-dropdown" data-am-dropdown>
+                <button class="am-btn am-btn-primary am-dropdown-toggle center_button" data-am-dropdown-toggle>
+                    {{UserName}}<span class="am-icon-caret-down"></span></button>
+                <ul class="am-dropdown-content dropdown_user">
+                    <li><a href="../user/userCenter"><img src="../img/avatar.jpg">个人中心</a></li>
+                    img
+                    <li><a href="#"><span onclick="exit()">退出登录</span></a></li>
+                </ul>
+            </div>
+            <div class="usage_right">
+                <ul>
+                    <li>
+                        <button type="button" class="am-btn am-btn-primary login-btn" ng-click="sign()"
+                                data-am-modal="{target: '#doc-modal-2', closeViaDimmer: 0, width: 300, height: 100}">
+                            签到
+                        </button>
+                    </li>
+                    <li ng-show="IsRoot==true">
+                        <button type="button" class="login-btn"><a href="../user/console">工作台</a></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body_part">
+        <div class="home">
+            <div class="body_center">
+                <div class="body_center_left">
+                    <div class="center_left_DB">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>每日打榜</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    QQ音乐
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    网易云
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    微博
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="center_left_TJ">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>每日推荐</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    不为谁而作的歌
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    修炼爱情
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    可惜没如果
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="body_center_ul">
+                    <div class="am-slider am-slider-default" data-am-flexslider>
+                        <ul class="am-slides body_center_li">
+                            <li><img src="../img/slide1p1.jpg"/></li>
+                            <li><img src="../img/slide2p1.jpg"/></li>
+                            <li><img src="../img/slide3p1.jpg"/></li>
+                            <li><img src="../img/slide3p2.jpg"/></li>
+                            <li><img src="../img/slide2p1.jpg"/></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="body_center_right">
+                    <div class="center_right_GX">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>贡献榜</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    林小瓜的夫人
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    林三岁的老婆
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    林俊杰现任
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="center_right_XZ">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>下载榜</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    林俊杰现任
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    林小瓜的夫人
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    林三岁的老婆
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="body_footer">
+                <div class="body_footer_header">
+                    <span>热门推荐</span>
+                    <a>帅气的</a>
+                    <a>可爱的</a>
+                    <a>搞怪的</a>
+                </div>
+                <div class="body_footer_center">
+                    <ul>
+                        <li ng-repeat="x in picture track by $index"><img ng-src="{{x}}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo" style="display: none">
+            <div class="photo_center">
+                <form>
+                    <ul class="photo_center_search">
+                        <li class="photo_center_input">
+                            <input type="text" placeholder="阳光">
+                        </li>
+                        <li class="photo_center_button">
+                            <input type="button" value="搜索">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="photo_footer">
+                <div class="body_footer_center">
+                    <ul>
+                        <li><img src="../img/slide1p1.jpg"/></li>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                        <li><img src="../img/slide3p2.jpg"/></li>
+                    </ul>
+                    <ul>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="computer" style="display: none">
+            <div class="photo_center">
+                <form>
+                    <ul class="photo_center_search">
+                        <li class="photo_center_input">
+                            <input type="text" placeholder="阳光">
+                        </li>
+                        <li class="photo_center_button">
+                            <input type="button" value="搜索">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="body_footer">
+                <div class="body_footer_center">
+                    <ul>
+                        <li><img src="../img/slide1p1.jpg"/></li>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                        <li><img src="../img/slide3p2.jpg"/></li>
+                    </ul>
+                    <ul>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="video" style="display: none">
+            <div class="photo_center">
+                <form>
+                    <ul class="photo_center_search">
+                        <li class="photo_center_input">
+                            <input type="text" placeholder="阳光">
+                        </li>
+                        <li class="photo_center_button">
+                            <input type="button" value="搜索">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="body_footer">
+                <div class="body_footer_center">
+                    <ul>
+                        <li>
+                            <video src="../video/可惜没如果.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                        <li>
+                            <video src="../video/我继续.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                        <li>
+                            <video src="../video/可惜没如果.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                        <li>
+                            <video src="../video/我继续.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <video src="../video/可惜没如果.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                        <li>
+                            <video src="../video/我继续.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                        <li>
+                            <video src="../video/可惜没如果.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                        <li>
+                            <video src="../video/我继续.mp4" controls="controls">您的浏览器不支持video标签</video>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="story" style="display: none">
+            <div class="photo_center">
+                <form>
+                    <ul class="photo_center_search">
+                        <li class="photo_center_input">
+                            <input type="text" placeholder="阳光">
+                        </li>
+                        <li class="photo_center_button">
+                            <input type="button" value="搜索">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="body_footer">
+                <div class="body_footer_center">
+                    <ul>
+                        <li><img src="../img/slide1p1.jpg"/></li>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                        <li><img src="../img/slide3p2.jpg"/></li>
+                    </ul>
+                    <ul>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                        <li><img src="../img/slide2p1.jpg"/></li>
+                        <li><img src="../img/slide3p1.jpg"/></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+        <div class="am-modal-dialog login_top">
+            <div class="am-modal-hd login_header"><!--login_header-->
+                <ul class="switch1">
+                    <li class="select">登录</li>
+                    <li>注册</li>
+                </ul>
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd body-login">
+                <div class="login">
+                    <form method="POST">
+                        <ul>
+                            <li><input type="text" placeholder="用户名/邮箱/手机号" name="userName" id="login-name"></li>
+                            <li><input type="password" placeholder="密码" name="pwd" id="login-pwd"></li>
+                            <li><input type="text" placeholder="验证码" name="checkCode"></li>
+                            <li><input type="button" value="登录" onclick="login()"></li>
+                            <a href="../user/resetPassWord">忘记密码</a>
+                        </ul>
+                    </form>
+                </div>
+                <div class="login" style="display: none"><!--registered-->
+                    <form method="POST">
+                        <ul>
+                            <li><input type="text" placeholder="邮箱/手机号" id="registeredWay"></li>
+                            <li><input type="text" placeholder="用户名" id="registeredName"></li>
+                            <li><input type="password" placeholder="密码" id="registeredPwd"></li>
+                            <li><input type="password" placeholder="请再次输入密码" id="registeredPwdCheck"></li>
+                            <li><input type="text" placeholder="验证码"></li>
+                            <li><input type="button" value="注册" onclick="toRegistered()"></li>
+                            <a onclick="toLogin()">已有账号？去登录</a>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-2">
+        <div class="am-modal-dialog check-in">
+            <div class="am-modal-hd">
+                签到<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd check-in-message">
+                <span>{{signin}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-3">
+        <div class="am-modal-dialog check-in">
+            <div class="am-modal-hd">
+                签到<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd check-in-message">
+                <span>您未登录，请登录后签到</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../js/amazeui.min.js"></script>
+<script src="../js/angular.min.js"></script>
+<script src="../js/toastr.min.js"></script>
+<script>
+    toastr.options.positionClass = 'toast-top-center';
+    //外部调用angular controller的东西
+    var appElement = document.querySelector('[ng-controller=homeIndex]');
+    var $scope = angular.element(appElement).scope();
+    $(function () {
+        $('.switch li').click(function () {
+            var divshow = $(".body_part").children("div");
+            if (!$(this).hasClass("select")) {
+                var thisIndex = $(this).index();
+                $(this).addClass("select");
+                $(this).siblings("li").removeClass("select");
+                $(divshow[thisIndex]).show();
+                $(divshow[thisIndex]).siblings("div").hide();
+            }
+            //调用$scope中的方法
+            switch ($(this).index()) {
+                case 0:$scope.getHotPicture();break;
+                case 1:$scope.getPicture();break;
+                case 2:$scope.getWallPicture();break;
+                case 3:$scope.getVideo();break;
+                case 4:$scope.getStory();break;
+                default:$scope.getHotPicture();break;
+            }
+        });
+    });
+
+    $(function () {
+        $('.switch1 li').click(function () {
+            var divshow = $(".body-login").children("div");
+            if (!$(this).hasClass("select")) {
+                var thisIndex = $(this).index();
+                $(this).addClass("select");
+                $(this).siblings("li").removeClass("select");
+                $(divshow[thisIndex]).show();
+                $(divshow[thisIndex]).siblings("div").hide();
+            }
+        });
+    });
+
+    $(function () {
+        var $slider = $('#demo-slider-0');
+        var counter = 0;
+        var getSlide = function () {
+            counter++;
+            return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+                (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+                '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
+        };
+
+        $('.js-demo-slider-btn').on('click', function () {
+            var action = this.getAttribute('data-action');
+            if (action === 'add') {
+                $slider.flexslider('addSlide', getSlide());
+            } else {
+                var count = $slider.flexslider('count');
+                count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+            }
+        });
+    });
+
+    function login() {
+        var name = $('#login-name').val();
+        var pwd = $('#login-pwd').val();
+        var url = "../user/login";
+        $.ajax({
+            url: url,
+            type: "Post",
+            data: {
+                "userName": name,
+                "userPwd": pwd
+            },
+            success: function (result) {
+                if (result.code == 100) {
+                    toastr.success('登录成功');
+                    setCookie("userName", name, 7);
+                    setCookie("Pwd", pwd, 7);
+                    setCookie("IsRoot", result.msg, 7);
+                    $('.am-modal').modal('close');
+                    window.location.reload();
+                } else {
+                    toastr.error('账号/密码不匹配！请重新输入');
+                    delCookie("userName");
+                    delCookie("Pwd");
+                    delCookie("IsRoot");
+                }
+            }
+        });
+    }
+
+    function toLogin() {
+        var divshow = $(".body-login").children("div");
+        $(this).removeClass("select");
+        $(this).siblings("li").addClass("select");
+        $(divshow[0]).show();
+        $(divshow[0]).siblings("div").hide();
+    }
+
+    function toRegistered() {
+        var loginWay = $('#registeredWay').val();
+        var name = $('#registeredName').val();
+        var pwd = $('#registeredPwd').val();
+        var url = "../user/registered";
+        $.ajax({
+            url: url,
+            type: "Post",
+            data: {
+                "registeredWay": loginWay,
+                "registeredName": name,
+                "registeredPwd": pwd
+            },
+            success: function (result) {
+                if (result.code == 100) {
+                    toastr.success('注册成功，正在为您登录');
+                    setCookie("userName", name, 7);
+                    setCookie("Pwd", pwd, 7);
+                    $('.am-modal').modal('close');
+                    window.location.reload();
+                } else {
+                    delCookie("userName");
+                }
+            }
+        });
+    }
+
+    function exit() {
+        delCookie("userName");
+        delCookie("Pwd");
+        delCookie("IsRoot");
+        window.location.reload();
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function delCookie(key) {
+        //var key="userName";
+        var date = new Date();
+        date.setTime(date.getTime() - 1);
+        var delValue = getCookie(key);
+        if (!!delValue) {
+            document.cookie = key + '=' + delValue + ';expires=' + date.toGMTString();
+        }
+    }
+
+    function signIn() {
+        var userId = $('#login-name').val();
+        var url = "../signin/countNum";
+        $.ajax({
+            url: url,
+            type: "Post",
+            data: {
+                "userId": userId,
+            },
+            success: function (result) {
+                if (result.code == 100) {
+
+                } else {
+                }
+            }
+        });
+    }
+
+    var app = angular.module('myapp', []);
+    app.controller("homeIndex", ['$scope', '$http', function ($scope, $http) {
+        if (getCookie("userName") == null || getCookie("userName") == "")
+            $scope.Islogin = false;
+        else {
+            $scope.Islogin = true;
+            if (getCookie("IsRoot") == 1) {
+                $scope.IsRoot = true;
+            } else {
+                $scope.IsRoot = false;
+            }
+            $scope.UserName = getCookie("userName");
+        }
+        $scope.exitLogin = function () {
+            delCookie(getCookie("userName"));
+            delCookie(getCookie("Pwd"));
+            window.location.reload();
+        }
+        $scope.getHotPicture = function () {
+            $http({
+                url: '../picture/hotPicture',
+                method: 'POST',
+            }).success(function (response) {
+                //响应成功
+                if (response.length > 0) {
+                    $scope.picture = response;
+                }
+            });
+        }
+        $scope.getPicture = function () {
+            $http({
+                url: '../picture/hotPicture',
+                method: 'POST',
+            }).success(function (response) {
+                //响应成功
+                if (response.length > 0) {
+                    $scope.picture = response;
+                }
+            });
+        }
+        $scope.getWallPicture = function () {
+            $http({
+                url: '../picture/hotPicture',
+                method: 'POST',
+            }).success(function (response) {
+                //响应成功
+                if (response.length > 0) {
+                    $scope.picture = response;
+                }
+            });
+        }
+        $scope.getVideo = function () {
+            $http({
+                url: '../picture/hotPicture',
+                method: 'POST',
+            }).success(function (response) {
+                //响应成功
+                if (response.length > 0) {
+                    $scope.picture = response;
+                }
+            });
+        }
+        $scope.getStory = function () {
+            $http({
+                url: '../picture/hotPicture',
+                method: 'POST',
+            }).success(function (response) {
+                //响应成功
+                if (response.length > 0) {
+                    $scope.picture = response;
+                }
+            });
+        }
+        $scope.sign=function(){
+            $http({
+                url: '../signin/countNum',
+                method: 'POST',
+                data: {
+                    username: $scope.UserName
+                }
+            }).success(function (response) {
+                //响应成功
+                $scope.signin=response.msg;
+            });
+        }
+        $scope.getHotPicture();
+    }]);
+</script>
+</body>
+
+</html>

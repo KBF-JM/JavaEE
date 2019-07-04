@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.kbf.jmshome.dao.UploadrecordMapper" >
+  <resultMap id="BaseResultMap" type="org.kbf.jmshome.model.Uploadrecord" >
+    <result column="id" property="id" jdbcType="VARCHAR" />
+    <result column="fileName" property="filename" jdbcType="VARCHAR" />
+    <result column="fileId" property="fileid" jdbcType="VARCHAR" />
+    <result column="uploadPath" property="uploadpath" jdbcType="VARCHAR" />
+    <result column="fileType" property="filetype" jdbcType="INTEGER" />
+    <result column="uploadUserId" property="uploaduserid" jdbcType="VARCHAR" />
+    <result column="uploadTime" property="uploadtime" jdbcType="TIMESTAMP" />
+    <result column="checkStatu" property="checkstatu" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, fileName, fileId, uploadPath, fileType, uploadUserId, uploadTime, checkStatu
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="org.kbf.jmshome.model.UploadrecordExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from uploadrecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="org.kbf.jmshome.model.UploadrecordExample" >
+    delete from uploadrecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="org.kbf.jmshome.model.Uploadrecord" >
+    insert into uploadrecord (id, fileName, fileId, 
+      uploadPath, fileType, uploadUserId, 
+      uploadTime, checkStatu)
+    values (#{id,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, #{fileid,jdbcType=VARCHAR}, 
+      #{uploadpath,jdbcType=VARCHAR}, #{filetype,jdbcType=INTEGER}, #{uploaduserid,jdbcType=VARCHAR}, 
+      #{uploadtime,jdbcType=TIMESTAMP}, #{checkstatu,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="org.kbf.jmshome.model.Uploadrecord" >
+    insert into uploadrecord
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="filename != null" >
+        fileName,
+      </if>
+      <if test="fileid != null" >
+        fileId,
+      </if>
+      <if test="uploadpath != null" >
+        uploadPath,
+      </if>
+      <if test="filetype != null" >
+        fileType,
+      </if>
+      <if test="uploaduserid != null" >
+        uploadUserId,
+      </if>
+      <if test="uploadtime != null" >
+        uploadTime,
+      </if>
+      <if test="checkstatu != null" >
+        checkStatu,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null" >
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="fileid != null" >
+        #{fileid,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadpath != null" >
+        #{uploadpath,jdbcType=VARCHAR},
+      </if>
+      <if test="filetype != null" >
+        #{filetype,jdbcType=INTEGER},
+      </if>
+      <if test="uploaduserid != null" >
+        #{uploaduserid,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadtime != null" >
+        #{uploadtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="checkstatu != null" >
+        #{checkstatu,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="org.kbf.jmshome.model.UploadrecordExample" resultType="java.lang.Integer" >
+    select count(*) from uploadrecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update uploadrecord
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filename != null" >
+        fileName = #{record.filename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileid != null" >
+        fileId = #{record.fileid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uploadpath != null" >
+        uploadPath = #{record.uploadpath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filetype != null" >
+        fileType = #{record.filetype,jdbcType=INTEGER},
+      </if>
+      <if test="record.uploaduserid != null" >
+        uploadUserId = #{record.uploaduserid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uploadtime != null" >
+        uploadTime = #{record.uploadtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.checkstatu != null" >
+        checkStatu = #{record.checkstatu,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update uploadrecord
+    set id = #{record.id,jdbcType=VARCHAR},
+      fileName = #{record.filename,jdbcType=VARCHAR},
+      fileId = #{record.fileid,jdbcType=VARCHAR},
+      uploadPath = #{record.uploadpath,jdbcType=VARCHAR},
+      fileType = #{record.filetype,jdbcType=INTEGER},
+      uploadUserId = #{record.uploaduserid,jdbcType=VARCHAR},
+      uploadTime = #{record.uploadtime,jdbcType=TIMESTAMP},
+      checkStatu = #{record.checkstatu,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

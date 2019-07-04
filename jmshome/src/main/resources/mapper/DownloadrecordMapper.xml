@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.kbf.jmshome.dao.DownloadrecordMapper" >
+  <resultMap id="BaseResultMap" type="org.kbf.jmshome.model.Downloadrecord" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="fileName" property="filename" jdbcType="VARCHAR" />
+    <result column="fileId" property="fileid" jdbcType="VARCHAR" />
+    <result column="filePath" property="filepath" jdbcType="VARCHAR" />
+    <result column="downloadUserId" property="downloaduserid" jdbcType="VARCHAR" />
+    <result column="downloadTime" property="downloadtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, fileName, fileId, filePath, downloadUserId, downloadTime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="org.kbf.jmshome.model.DownloadrecordExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from downloadrecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from downloadrecord
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from downloadrecord
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="org.kbf.jmshome.model.DownloadrecordExample" >
+    delete from downloadrecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="org.kbf.jmshome.model.Downloadrecord" >
+    insert into downloadrecord (id, fileName, fileId, 
+      filePath, downloadUserId, downloadTime
+      )
+    values (#{id,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, #{fileid,jdbcType=VARCHAR}, 
+      #{filepath,jdbcType=VARCHAR}, #{downloaduserid,jdbcType=VARCHAR}, #{downloadtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="org.kbf.jmshome.model.Downloadrecord" >
+    insert into downloadrecord
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="filename != null" >
+        fileName,
+      </if>
+      <if test="fileid != null" >
+        fileId,
+      </if>
+      <if test="filepath != null" >
+        filePath,
+      </if>
+      <if test="downloaduserid != null" >
+        downloadUserId,
+      </if>
+      <if test="downloadtime != null" >
+        downloadTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null" >
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="fileid != null" >
+        #{fileid,jdbcType=VARCHAR},
+      </if>
+      <if test="filepath != null" >
+        #{filepath,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaduserid != null" >
+        #{downloaduserid,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadtime != null" >
+        #{downloadtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="org.kbf.jmshome.model.DownloadrecordExample" resultType="java.lang.Integer" >
+    select count(*) from downloadrecord
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update downloadrecord
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filename != null" >
+        fileName = #{record.filename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileid != null" >
+        fileId = #{record.fileid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filepath != null" >
+        filePath = #{record.filepath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.downloaduserid != null" >
+        downloadUserId = #{record.downloaduserid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.downloadtime != null" >
+        downloadTime = #{record.downloadtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update downloadrecord
+    set id = #{record.id,jdbcType=VARCHAR},
+      fileName = #{record.filename,jdbcType=VARCHAR},
+      fileId = #{record.fileid,jdbcType=VARCHAR},
+      filePath = #{record.filepath,jdbcType=VARCHAR},
+      downloadUserId = #{record.downloaduserid,jdbcType=VARCHAR},
+      downloadTime = #{record.downloadtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="org.kbf.jmshome.model.Downloadrecord" >
+    update downloadrecord
+    <set >
+      <if test="filename != null" >
+        fileName = #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="fileid != null" >
+        fileId = #{fileid,jdbcType=VARCHAR},
+      </if>
+      <if test="filepath != null" >
+        filePath = #{filepath,jdbcType=VARCHAR},
+      </if>
+      <if test="downloaduserid != null" >
+        downloadUserId = #{downloaduserid,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadtime != null" >
+        downloadTime = #{downloadtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.kbf.jmshome.model.Downloadrecord" >
+    update downloadrecord
+    set fileName = #{filename,jdbcType=VARCHAR},
+      fileId = #{fileid,jdbcType=VARCHAR},
+      filePath = #{filepath,jdbcType=VARCHAR},
+      downloadUserId = #{downloaduserid,jdbcType=VARCHAR},
+      downloadTime = #{downloadtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,580 @@
+body {
+    /*display: flex;*/
+    /*display: -webkit-flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*网站首页样式*/
+.main {
+    width: 1560px;
+    MARGIN-RIGHT: auto;
+    MARGIN-LEFT: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*头部样式*/
+.header {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(112, 24, 201);
+}
+
+.header_left {
+    float: left;
+    width: 25%;
+    color: white;
+    font-size: 1.125rem;
+}
+
+.header_left li {
+    display: inline;
+    margin-left: 1.25rem;
+}
+
+.header_left_logo img {
+    outline: none;
+    position: relative;
+    width: auto;
+}
+
+.header_left_avatar img {
+    outline: none;
+    border-radius: 50%;
+    position: relative;
+    width: auto;
+}
+
+.header_center {
+    float: left;
+    width: 45%;
+    font-size: 1.75rem;
+    color: white;
+}
+
+.header_center li {
+    display: inline;
+    margin-left: 1.125rem;
+}
+
+.header_center li:hover {
+    color: lawngreen;
+}
+
+.header_right {
+    float: right;
+    width: 30%;
+    font-size: .875rem;
+    color: white;
+    padding-left: 14rem;
+}
+
+.header_right li {
+    display: inline;
+    margin-left: 1.25rem;
+}
+
+.header_right button:hover{
+    background-color: rgb(112, 24, 201);
+    color:lawngreen;
+}
+
+.header_right img {
+    border-radius: 50%;
+    position: relative;
+    right: 0;
+    width: 2.625rem;
+    outline: none;
+}
+
+.login-btn {
+    background-color: rgb(112, 24, 201);
+    font-size: 1.5rem;
+    border: 0 !important;
+    outline: none !important;
+}
+
+.login-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.center_button {
+    background-color: rgb(112, 24, 201) !important;
+    border: 0 !important;
+    outline: none !important;
+}
+
+.dropdown_user {
+    font-size: 1.5rem;
+    height: auto;
+    width: auto;
+}
+
+.usage_right {
+    float: right;
+    padding-right: 36%;
+}
+
+.usage_right a:hover{
+    color: lawngreen;
+}
+
+.login {
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_top {
+    background-color: white;
+    outline: none;
+    width: 25%;
+    height: auto;
+}
+
+.login_header {
+    height: auto;
+    font-size: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_header li {
+    display: inline-flex;
+}
+
+.login_header li:hover{
+    color: rgb(112, 24, 201);
+}
+
+.body-login li {
+    padding-top: 1rem;
+}
+
+.body-login a {
+    padding-top: 1.5rem;
+    font-size: .5rem;
+    text-align: left;
+}
+
+.check-in {
+    background-color: rgb(112, 24, 201);
+    color: white;
+}
+
+/*首页样式*/
+
+.home {
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.body_center {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.body_center_left {
+    float: left;
+    width: 25%;
+}
+
+.center_left_DB {
+    float: left;
+    width: 50%;
+}
+
+.center_left_TJ {
+    float: right;
+    width: 50%;
+}
+
+.body_center table {
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.body_center th {
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: .25rem solid rgb(112, 24, 201);
+}
+
+.body_center_ul {
+    width: 50%;
+    float: left;
+}
+
+.body_center_li img {
+    max-width: 100%;
+    height: auto;
+}
+
+.body_center_right {
+    float: right;
+    width: 25%;
+}
+
+.center_right_GX {
+    float: left;
+    width: 50%;
+}
+
+.center_right_XZ {
+    float: right;
+    width: 50%;
+}
+
+/*首页底部样式*/
+
+.body_footer {
+    width: 100%;
+    flex: auto;
+}
+
+.body_footer_header {
+    text-align: left;
+    padding-left: 4rem;
+}
+
+.body_footer_header span{
+    font-size: 1rem;
+}
+
+.body_footer_header a {
+    color: black;
+    font-size: 1.25rem;
+    padding-left: .375rem;
+}
+
+.body_footer_center {
+    padding-top: 1.5rem;
+}
+
+.body_footer_center ul {
+    text-align: center;
+}
+
+.body_footer_center li {
+    list-style: none;
+    display: inline-block;
+    width: 15%;
+}
+
+.body_footer_center img {
+    max-height: 10rem;
+}
+
+/*壁纸栏样式*/
+
+.photo_center {
+    height: 280px;
+    background-color: rgb(112, 24, 201);
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo_center_search li {
+    display: inline;
+}
+
+.photo_center_input input {
+    outline: none;
+    text-align: left;
+    width: 420px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.photo_center_button input {
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0;
+    background-color: white;
+    outline: none;
+}
+
+/*故事栏样式*/
+
+/*个人中心样式*/
+
+/*密码重置页面样式*/
+.pwd_top{
+    height: 60px;
+    background-color: rgb(112, 24, 201);
+    font-size: 20px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.pwdCenter li{
+    display: inline;
+    /*margin-left: 20px;*/
+}
+
+.pwd_top a{
+    text-decoration:none;
+    color: white;
+}
+.getBody {
+    /*background-color: rgb(112, 24, 201);*/
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    width: 100%;
+}
+
+.resetBody{
+    width: 60%;
+    font-size: 1rem;
+    padding-left: 20%;
+    text-align: center;
+}
+
+.resetBody ul{
+}
+
+.resetBody li{
+    display: flex;
+}
+
+/*控制台样式*/
+
+/*.registered {*/
+/*    display: none;*/
+/*    outline: none;*/
+/*    width: 300px;*/
+/*    height: 36px;*/
+/*    font-size: 16px;*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+/*.registered input {*/
+/*    outline: none;*/
+/*    width: 300px;*/
+/*    height: 30px;*/
+/*    font-size: 16px;*/
+/*    padding-left: 10px;*/
+/*    border-radius: 10px;*/
+/*    border: 0;*/
+/*}*/
+
+/*body {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    margin: auto;*/
+/*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+/*}*/
+
+/*.body_top {*/
+/*    background-color: rgb(112, 24, 201);*/
+/*    width: 100%;*/
+/*    height: 380px;*/
+/*}*/
+
+/*.body_top_top {*/
+/*    vertical-align: middle;*/
+/*    height: 60px;*/
+/*}*/
+
+/*.body_top_bottom {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    margin: 0 auto;*/
+/*    height: 320px;*/
+/*}*/
+
+/*.body_center_search {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*.body_center_search form {*/
+/*    text-align: center;*/
+/*    padding-top: 140px;*/
+/*}*/
+
+/*.body_center_search li {*/
+/*    display: inline;*/
+/*}*/
+
+/*.body_center_search input {*/
+/*    text-align: left;*/
+/*    width: 420px;*/
+/*    height: 50px;*/
+/*    border-radius: 10px;*/
+/*    border: 0;*/
+/*}*/
+
+/*.body_center_search_input input {*/
+/*    padding-left: 10px;*/
+/*}*/
+
+/*.body_center_search_button input {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    width: 100px;*/
+/*    height: 50px;*/
+/*}*/
+
+/*.body_bottom_center {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+/*.body_bottom_center ul {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    width: 80%;*/
+/*}*/
+
+/*.body_bottom_center li {*/
+/*    display: inline;*/
+/*    text-align: left;*/
+/*    padding-left: 20px;*/
+/*}*/
+
+/*.body_bottom_center img {*/
+/*    padding-top: 30px;*/
+/*    text-align: left;*/
+/*    max-width: 256px;*/
+/*}*/
+
+/*.body_bottom_center video {*/
+/*    padding-top: 30px;*/
+/*    text-align: left;*/
+/*    max-width: 256px;*/
+/*}*/
+
+/*.body_bottom_center_ul img {*/
+/*    padding-top: 30px;*/
+/*    text-align: left;*/
+/*    max-height: 160px;*/
+/*}*/
+
+/*body {*/
+/*    width: 60%;*/
+/*    outline: none;*/
+/*    text-align: center;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*}*/
+
+/*.body_top {*/
+/*    height: 300px;*/
+/*    vertical-align: center;*/
+/*    background-color: rgb(68, 160, 247);*/
+/*    color: white;*/
+/*    border: 1px solid;*/
+/*    border-color: rgb(68, 160, 247);*/
+/*}*/
+
+/*.body_top_img {*/
+/*    height: 60%;*/
+/*    padding-top: 70px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.body_top_img img {*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+/*.body_top_name {*/
+/*    height: 10%;*/
+/*    text-align: center;*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*.body_top_introduction {*/
+/*    height: 10%;*/
+/*    text-align: center;*/
+/*    font-size: 10px;*/
+/*}*/
+
+/*.body_top_bottom {*/
+/*    height: 20%;*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*    font-size: 16px;*/
+/*}*/
+
+/*.body_top_bottom_left {*/
+/*    width: 50%;*/
+/*    height: 100%;*/
+/*    float: left;*/
+/*    padding-top: 14px;*/
+/*}*/
+
+/*.body_top_bottom_right {*/
+/*    width: 50%;*/
+/*    height: 100%;*/
+/*    float: right;*/
+/*    padding-top: 14px;*/
+/*}*/
+
+/*.body_bottom {*/
+/*    background-color: white;*/
+/*}*/
+
+/*.legend-form li {*/
+/*    display: inline;*/
+/*}*/
+
+/*.legend-left {*/
+/*    float: left;*/
+/*}*/
+
+/*.legend-right {*/
+/*    float: right;*/
+/*}*/
+
+
+
+
