@@ -1,7 +1,7 @@
 package org.kbf.jmshome.controller;
 
 import com.alibaba.druid.support.json.JSONUtils;
-import org.kbf.jmshome.Service.UserService;
+import org.kbf.jmshome.service.UserService;
 import org.kbf.jmshome.auxiliary.Msg;
 import org.kbf.jmshome.model.User;
 import org.springframework.beans.factory.annotation.Autowired;

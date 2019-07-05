@@ -1,4 +1,4 @@
-package org.kbf.jmshome.Service;
+package org.kbf.jmshome.service;
 
 import org.kbf.jmshome.model.Signcontinue;
 import org.kbf.jmshome.model.SigncontinueExample;
