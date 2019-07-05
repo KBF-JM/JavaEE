@@ -1,4 +1,4 @@
-package org.kbf.jmshome.Service;
+package org.kbf.jmshome.service;
 
 import net.sf.json.JSONArray;
 import org.kbf.jmshome.dao.PictureMapper;

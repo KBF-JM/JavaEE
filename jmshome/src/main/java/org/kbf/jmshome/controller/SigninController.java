@@ -1,7 +1,7 @@
 package org.kbf.jmshome.controller;
 
-import org.kbf.jmshome.Service.SigninService;
-import org.kbf.jmshome.Service.UserService;
+import org.kbf.jmshome.service.SigninService;
+import org.kbf.jmshome.service.UserService;
 import org.kbf.jmshome.auxiliary.Msg;
 import org.kbf.jmshome.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
