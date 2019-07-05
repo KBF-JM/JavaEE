@@ -1,10 +1,9 @@
 package org.kbf.jmshome.dao;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.kbf.jmshome.model.Picture;
 import org.kbf.jmshome.model.PictureExample;
-
-import java.util.List;
 
 public interface PictureMapper {
     int countByExample(PictureExample example);

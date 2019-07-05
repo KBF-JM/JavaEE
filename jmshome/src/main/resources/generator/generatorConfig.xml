@@ -11,7 +11,7 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码   mysql数据库连接-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/owerweb?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2B8"
+                        connectionURL="jdbc:mysql://localhost:3306/ownerweb?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2B8"
                         userId="root"
                         password="xyf1234">
             <!--MySQL 不支持 schema 或者 catalog 所以需要添加这个-->
@@ -68,16 +68,16 @@
                <!--enableDeleteByExample="false"-->
                <!--enableSelectByExample="false"-->
                <!--selectByExampleQueryId="false"></table>-->
-<!--        <table schema="owerweb" tableName="user"></table>-->
-<!--        <table schema="owerweb" tableName="downloadRecord"></table>-->
-<!--        <table schema="owerweb" tableName="uploadRecord"></table>-->
-<!--        <table schema="owerweb" tableName="comment"></table>-->
-<!--        <table schema="owerweb" tableName="computerPicture"></table>-->
-<!--        <table schema="owerweb" tableName="picture"></table>-->
-<!--        <table schema="owerweb" tableName="video"></table>-->
-<!--        <table schema="owerweb" tableName="story"></table>-->
-<!--        <table schema="owerweb" tableName="signin"></table>-->
-        <table schema="owerweb" tableName="signContinue"></table>
+                <table schema="ownerweb" tableName="user"></table>
+                <table schema="ownerweb" tableName="downloadRecord"></table>
+                <table schema="ownerweb" tableName="uploadRecord"></table>
+                <table schema="ownerweb" tableName="comment"></table>
+                <table schema="ownerweb" tableName="computerPicture"></table>
+                <table schema="ownerweb" tableName="picture"></table>
+                <table schema="ownerweb" tableName="video"></table>
+                <table schema="ownerweb" tableName="story"></table>
+                <table schema="ownerweb" tableName="signin"></table>
+                <table schema="ownerweb" tableName="signContinue"></table>
 
         <!--    <table tableName="orderdetail"></table> -->
         <!-- <table schema="" tableName="sys_user"></table>
